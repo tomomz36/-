@@ -7,10 +7,16 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 
-const connection = mysql.createConnection({
+/*const connection = mysql.createConnection({
   host: 'localhost',
   root:'3306',
   user: 'memon',
   password: 'memo1234',	
   database: 'logintry'
-});
+});*/
+
+app.get('/', (req, res) => {
+    res.render('top.ejs');
+  });
+
+app.listen(3000);
