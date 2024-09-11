@@ -6,6 +6,11 @@
   
   body {
     font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+  a{
+    text-decoration: none;
   }
 
 /*ヘッダー*/ 
@@ -17,6 +22,11 @@
     padding: 10px 20px;
     border-bottom: 1px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width:100%;/*追加分*/
+    opacity: 0.8;
+    position:fixed;
+    top:0;
+    z-index:10;
   }
 
   .header-left {
@@ -89,3 +99,95 @@
   .register-btn:hover, .login-btn:hover {
     opacity: 0.7;
   }
+
+
+/*メイン*/
+.container{
+  width:1170px;
+  padding:0 15px;
+  margin:0 auto;
+}
+
+.top-wrapper{
+  padding:280px 0 100px 0;
+  background-image:url(../pics/toumei0.7.png),linear-gradient(90deg, rgba(141, 139, 226, 1), rgba(253, 187, 203, 1));
+  background-size:cover;
+  color:black;
+  text-align: center;
+}
+
+.top-wrapper h1{
+  font-size:45px;
+  letter-spacing:5px;
+  padding-bottom: 30px;
+}
+
+.top-wrapper h2{
+  font-size: 35px;
+  letter-spacing: 5px;
+  padding-bottom: 50px;
+}
+
+.top-wrapper p{
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+.select-container{
+background-image: linear-gradient(90deg, rgba(168, 202, 240, 1), rgba(233, 240, 250, 1));
+}
+
+.block-heading{
+padding:50px 0 20px 0;
+color:#5f5d60;
+text-align: center;
+}
+
+.block-heading h2{
+font-weight: normal;
+}
+
+.block-section {
+display: flex;
+justify-content: space-around;
+padding: 40px;
+}
+
+.block {
+background-color: #f0f0f0;
+border-radius: 10px;
+text-align: center;
+width: 30%;
+padding: 20px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.block img {
+max-width: 100%;
+height: 220px;
+border-radius: 10px;
+}
+
+.block h4 {
+font-size: 1.5em;
+margin: 20px 0 10px;
+}
+
+.block p {
+font-size: 1em;
+color: #555;
+margin-bottom: 20px;
+}
+
+.block-btn {
+padding: 10px 20px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.block-btn:hover {
+background-color: #0056b3;
+}
