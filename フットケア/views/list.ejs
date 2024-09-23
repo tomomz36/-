@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>教材一覧</title>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+
+    <body>
+        <%- include('header'); %>
+
+        <main>
+            <div class="list-main">
+
+                <div class="tabs">
+                    <button class="tab-button" onclick="showSection('slides')">スライド一覧</button>
+                    <button class="tab-button" onclick="showSection('videos')">動画一覧</button>
+                </div>
+
+                <section id="slides" class="content-section">
+                    <h2>スライド一覧</h2>
+                    <ul class="slides-list">
+                            <li>
+                                <div class="slide-img">
+                                    <img src="slide1ex.png" alt="スライド１" height="100%" width="250">
+                                </div>
+
+                                <div class="slide-information">
+                                    <a href="/slide1"><h2>スライドタイトル１</h2></a>
+                                    <p>スライドの説明スライドの説明スライドの説明スライドの説明スライドの説明スライドの説明スライドの説明</p>
+                                </div>
+                            </li>
+                        
+                            <li>
+                                <div class="slide-img">
+                                    <img src="slide1ex.png" alt="スライド２" height="100%" width="250">
+                                </div>
+
+                                <div class="slide-information">
+                                    <a href="#"><h2>スライドタイトル２</h2></a>
+                                    <p>スライドの説明スライドの説明スライドの説明スライドの説明スライドの説明スライドの説明スライドの説明</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="slide-img">
+                                    <img src="slide1ex.png" alt="スライド３" height="100%" width="250">
+                                </div>
+
+                                <div class="slide-information">
+                                    <a href="#"><h2>スライドタイトル３</h2></a>
+                                    <p>スライドの説明スライドの説明スライドの説明スライドの説明スライドの説明スライドの説明スライドの説明</p>
+                                </div>
+                            </li>
+                    </ul>
+                </section>
+
+                <section id="videos" class="content-section" style="display: none;">
+                    <h2>動画一覧</h2>
+                    <ul class="videos-list">
+                        <li>
+                            <div class="video-img">
+                                <img src="movie1.png" alt="動画１" height="100%" width="250">
+                            </div>
+
+                            <div class="video-information">
+                                <a href="#"><h2>動画タイトル１</h2></a>
+                                <p>動画の説明動画の説明動画の説明動画の説明動画の説明動画の説明動画の説明動画の説明</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="video-img">
+                                <img src="movie1.png" alt="動画２" height="100%" width="250">
+                            </div>
+
+                            <div class="video-information">
+                                <a href="#"><h2>動画タイトル２</h2></a>
+                                <p>動画の説明動画の説明動画の説明動画の説明動画の説明動画の説明動画の説明動画の説明</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="video-img">
+                                <img src="movie1.png" alt="動画３" height="100%" width="250">
+                            </div>
+
+                            <div class="video-information">
+                                <a href="#"><h2>動画タイトル３</h2></a>
+                                <p>動画の説明動画の説明動画の説明動画の説明動画の説明動画の説明動画の説明動画の説明</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+
+        <script>
+            function showSection(sectionId) {
+                var sections = document.querySelectorAll('.content-section');
+                sections.forEach(function(section) {
+                    section.style.display = 'none';
+                });
+            
+                var activeSection = document.getElementById(sectionId);
+                if (activeSection) {
+                    activeSection.style.display = 'block';
+                }
+            }
+        </script>
+    </body>
+</html>
