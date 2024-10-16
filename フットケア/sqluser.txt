@@ -1,0 +1,3 @@
+user: footman
+host: localhost
+pass: foot0913

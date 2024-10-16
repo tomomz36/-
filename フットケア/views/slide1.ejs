@@ -47,6 +47,24 @@
                     prevEl: ".swiper-button-prev"
                 }
             });
+
+            let lastScrollTop = 0;
+                const header = document.getElementById("header");
+                const scrollThreshold = 50; // スクロール量の閾値
+
+                window.addEventListener("scroll", function() {
+                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (currentScroll > scrollThreshold) {
+                    // スクロールダウンでヘッダーを隠す
+                    header.style.display = "none";
+                    } else {
+                    // スクロールアップでヘッダーを表示
+                    header.style.display = "flex";
+                    }
+                    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // マイナスの値を防ぐ
+                });
+
         </script>
 
     </body>

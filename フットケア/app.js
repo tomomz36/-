@@ -56,6 +56,12 @@ app.get('/slide1', (req, res) => {
 });
 /*以上スライド*/
 
+/*以下動画達*/
+app.get('/video1', (req, res) => {
+  res.render('video1.ejs');
+});
+/*以上動画 */
+
 app.get('/signup', (req, res) => {
   res.render('signup.ejs', { errors: [] });
 });

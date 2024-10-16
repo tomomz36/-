@@ -10,6 +10,83 @@
     <body>
         <%- include('header'); %>
 
-        
+        <div class="video-main">
+            <div class="video-title">
+                <h2>動画のタイトル１</h2>
+            </div>
+
+            <div class="video-container">
+                <div class="video-content" id="video-content">
+                    <!--video id="video" src="movie.mov"  width="840px"  height="480px" controls></video-->
+                    <iframe width="840" height="480" src="https://www.youtube.com/embed/M1uL1q6ioVU?si=mz1jKZuo8LamLKUT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-memo">
+                    <button id="toggleButton" onclick="toggleVideoAlignment()">メモを表示</button>
+                    <textarea id="memo" placeholder="ここにメモを書いてください" autocomplete="memo"></textarea>
+                    <button id="savetxt" onclick="save();">メモを保存</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('toggleButton').addEventListener('click',function(){
+                var memo=document.getElementById('memo');
+                var save=document.getElementById('savetxt')
+            if(memo.style.display==='none'||memo.style.display===''){
+                memo.style.display='block';
+                save.style.display='block';
+                this.textContent='メモを非表示';
+            }else{
+                memo.style.display='none';
+                save.style.display='none';
+                this.textContent='メモを表示';
+            }
+            });
+
+            function save(){
+                const memo=document.getElementById('memo').value;
+
+                const blob=new Blob([memo],{type:'text/plane'});
+                
+                const a=document.createElement('a');
+                a.href=URL.createObjectURL(blob);
+                a.download='sample.txt';
+                a.click();
+            }
+
+            // 初期状態は中央揃え
+            let isCentered = true;
+
+            function toggleVideoAlignment() {
+                var container = document.getElementById("video-content");
+
+                if (isCentered) {
+                    container.style.textAlign = "left"; // 左揃えに変更
+                } else {
+                    container.style.textAlign = "center"; // 中央揃えに変更
+                }
+
+                // 状態を反転
+                isCentered = !isCentered;
+            }
+
+            let lastScrollTop = 0;
+            const header = document.getElementById("header");
+            const scrollThreshold = 50; // スクロール量の閾値
+
+            window.addEventListener("scroll", function() {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (currentScroll > scrollThreshold) {
+                // スクロールダウンでヘッダーを隠す
+                header.style.display = "none";
+                } else {
+                // スクロールアップでヘッダーを表示
+                header.style.display = "flex";
+                }
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // マイナスの値を防ぐ
+            });
+        </script>
     </body>
 </html>

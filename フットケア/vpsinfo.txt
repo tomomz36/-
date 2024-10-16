@@ -1,0 +1,12 @@
+conoha
+
+user:root
+pass:Footcare1536!
+
+新しいユーザ
+user:mizt
+pass:Foot138
+
+_________________________
+conohaで使用するssh
+パスフレーズ:conomz924
